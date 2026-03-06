@@ -88,7 +88,7 @@ npm run dev
 ## Environment Variables
 
 ```
-NATS_URL=nats://147.93.43.117:4222
+NATS_URL=nats://<your-nats-host>:4222
 SUPABASE_SERVICE_ROLE_KEY=<key>
 NEMESIS_ENABLED=true
 NEMESIS_ADMIN_TOKEN=<token>
