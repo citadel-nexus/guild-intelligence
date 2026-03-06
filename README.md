@@ -43,10 +43,9 @@ watches — and acts when necessary.
 | Phase 3 (Pen Test) | Live | OWASP + SSO + Infra + Credential scanning |
 
 ### Governance Bridge
-Subscribes to 5 NATS subjects, scores risk, enforces:
-- Risk ≥ 0.85 + nemesis threat → **IP quarantine**
-- Risk ≥ 0.80 + payment event → **payment hold**
-- Risk ≥ 0.65 → **Slack/Discord alert**
+Subscribes to 5 NATS subjects, scores risk in real time, and enforces tiered
+enforcement actions: IP quarantine, payment holds, and Slack/Discord alerts.
+Thresholds are configurable and governed by internal policy — not published here.
 
 ---
 
@@ -73,6 +72,73 @@ citadel.intel.scan.complete     — Pen test cycle finished
 citadel.intel.governance.event  — Governance decision emitted
 health.alert                    — System health degradation
 ```
+
+---
+
+## Mission System
+
+Intelligence missions reward threat detection, defensive operations, and governance compliance.
+
+| Mission | Description | XP | Unlock |
+|---------|-------------|-----|--------|
+| First Assessment | Run a full Nemesis Phase 1 threat evaluation | 200 | Default |
+| Pattern Identified | Detect and log an adversarial pattern | 150 | Default |
+| Quarantine Executed | Enforce an automated IP quarantine action | 300 | Operator rank |
+| Pen Test Complete | Complete a full pen test cycle and file a report | 400 | Intel rank |
+| 30-Day Clean | Zero governance escalations for 30 days | 500 | Director rank |
+| Collusion Graph | Detect a multi-agent collusion cluster | 600 | Director rank |
+
+**Daily missions (reset 00:00 UTC):**
+- Emit a `nemesis.threat.detected` event — 25 XP
+- Clear a pending governance queue item — 30 XP
+
+Trust Points (TP) are the primary currency here. Successful threat detections earn TP;
+false positives or missed threats reduce it. Your CAPS score determines autonomy level.
+
+---
+
+## Guild Expectations
+
+**Members:**
+- Maintain zero unreviewed governance escalations for >24 hours
+- CAPS composite score ≥ 0.65 required to handle Phase 3 pen test duties
+- Complete Intelligence onboarding (Nemesis primer) within 7 days of placement
+- Active participation in `#threat-intel` and `#gov-review` lobby channels
+
+**Contributors:**
+- All security-affecting PRs require dual review (2 approvals minimum)
+- Any changes to governance enforcement logic require a risk impact note in the PR
+- Pen test payloads must be stored in `tests/fixtures/` only — never in `src/`
+- Code review turnaround: 24 hours for security-critical files
+
+**Guild Lead (Director of Intelligence Operations):**
+- Daily governance queue review
+- Weekly threat summary to `#announcements`
+- Coordinate with Builder guild on any infra-level response actions
+
+---
+
+## Contributing
+
+**Branch naming:**
+```
+feat/<srs-code>/<short-description>
+fix/<srs-code>/<short-description>
+sec/<srs-code>/<short-description>
+```
+
+**PR checklist:**
+- [ ] SRS code referenced (e.g., `SRS: NEM-PENTEST-003`)
+- [ ] `npm test` passes — security regression tests included
+- [ ] No threshold values, scoring weights, or enforcement logic in public comments
+- [ ] New NATS subjects documented in this README
+- [ ] Governance event payloads validated against Supabase schema
+
+**Commit format:** `<type>(<srs-code>): <description>`
+Example: `sec(NEM-PENTEST-003): add SQL injection probe to pen test engine`
+
+**SAKE compliance:** New threat detection modules require a `.sake` file stub.
+See [guild-sdk](https://github.com/citadel-nexus/guild-sdk) for the format.
 
 ---
 
