@@ -1,4 +1,4 @@
-import  GuildClient  from '@citadel-guilds/sdk';
+import { GuildClient } from '@citadel-guilds/sdk';
 
 const guild = new GuildClient({
   name: 'intelligence',
