@@ -33,10 +33,14 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version-file: .nvmrc
+          registry-url: https://npm.pkg.github.com
+          scope: '@citadel-guilds'
       - uses: github/codeql-action/init@v3
         with:
           languages: javascript
       - uses: github/codeql-action/autobuild@v3
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GUILD_PACKAGES_READ_TOKEN }}
       - uses: github/codeql-action/analyze@v3
   secret-scan:
     runs-on: ubuntu-latest

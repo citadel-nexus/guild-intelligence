@@ -70,3 +70,4 @@ SRS-CN-INTELLIGENCE-BUILD-001:
     - .bits/
     - PROVENANCE.md
     - GOVERNANCE.md
+    - BUILD.md

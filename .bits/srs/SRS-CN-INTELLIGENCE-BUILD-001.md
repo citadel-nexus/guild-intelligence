@@ -50,3 +50,14 @@ No deployments, pushes to main, settings changes, secrets or unrelated SRS work.
 Native source/test/config paths are authorized by this directive; use logical
 CKET 07_BUILD/08_TEST for source/tests and 11_COMMIT for build configuration.
 CKS review target B+/75. CKS/CAPS/CK remain pending.
+
+## Continuation acceptance
+
+- Manual-only hosted lockfile resolution with scoped GitHub Packages auth,
+  all five npm gates, and a dedicated bits/lockfile-refresh PR branch.
+- Read-only post-signing verification of the real artifact, requiring rejection
+  of tampering and an incorrect signer identity. Preserve all 12 governance tests.
+- BUILD.md documents package access, ruleset activation, Actions OIDC and
+  attestation permissions, bot PR behavior and remaining offline blockers.
+- Continue on the session's bound branch based on merged PR #22; do not replay
+  already merged governance/build commits into the new PR.

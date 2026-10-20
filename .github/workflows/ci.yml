@@ -29,7 +29,11 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version-file: .nvmrc
+          registry-url: https://npm.pkg.github.com
+          scope: '@citadel-guilds'
       - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GUILD_PACKAGES_READ_TOKEN }}
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test

@@ -22,7 +22,7 @@
 SRS: SRS-CN-INTELLIGENCE-BUILD-001
 Dispatch: DISP-BUILD-intelligence
 Status: PARTIAL. Mode: staging. CK/CAPS/CKS: pending.
-Base: a080580836081136b3512e7ff627b5cd92c8dd78, which contains merged PR #21.
+Continuation base: f3232d64a48d037ab24a60961319f7a0faf1ce1c, which contains merged PR #22.
 
 ## Results
 
@@ -34,7 +34,7 @@ Base: a080580836081136b3512e7ff627b5cd92c8dd78, which contains merged PR #21.
 | npm run typecheck | BLOCKED | TS2307 for SDK, NATS and Vitest; no unresolved syntax diagnostics |
 | npm test | BLOCKED | Vitest is not cached/installed |
 | npm run build | BLOCKED | TS2307 for SDK and NATS; noEmitOnError prevents distribution output |
-| python -m unittest discover -s .bits/tests -p 'test_*.py' -v | PASS | 12 unchanged governance cases and 4 new build-policy cases |
+| python -m unittest discover -s .bits/tests -p 'test_*.py' -v | PASS | 12 unchanged governance cases, 4 build-policy cases and 6 hosted-flow cases |
 
 Node: 22.17.0, matching .nvmrc, engines, all Node CI setup steps and Docker.
 Local npm: 9.8.1. Compiler diagnostics used preinstalled TypeScript 5.7.3
@@ -76,3 +76,30 @@ suite and use PROVENANCE.md for hosted attestation verification after merge.
 
 No settings or production changes were made. This build SRS remains
 in_progress until its install, application tests and compiled-build gates pass.
+
+## Manual refresh and attestation continuation
+
+The same dispatch now adds workflow_dispatch-only lockfile resolution on a
+trusted default-branch runner. Its refresh job has contents/package read
+permissions, validates all five npm gates, and emits only the lockfile and
+CGRF/memory evidence. A separate publisher has contents/pull-request write
+permissions, guards against a changed default-branch SHA, and opens the fixed
+bits/lockfile-refresh branch. No workflow was dispatched from this sandbox.
+
+The separate read-only attestation verifier requires a positive result for the
+actual artifact and negative results for both a tampered copy and a different
+signer identity. Six new tests validate the job permissions, exact artifact
+IDs, verifier failure paths and generated lockfile metadata. A fake gh process
+is used only to test shell control flow; it is not cryptographic verification.
+The original 12 governance tests remain unchanged.
+
+All five requested npm commands were rerun offline for this continuation;
+the results remain as recorded above. Lint uses exact preinstalled tools,
+not a clean npm installation. Actual hosted lockfile/signature verification
+and the full application gates remain pending.
+
+The session-bound branch was fast-forwarded to origin/main. The previous
+build repair was already published and merged by PR #22, so no rebase or
+replay of those commits was necessary. The new diff is only this BUILD
+continuation. Create or Update PR remains the publication path; this session
+did not push refs, alter settings, create credentials or deploy anything.

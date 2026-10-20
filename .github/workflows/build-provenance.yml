@@ -54,7 +54,11 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: .nvmrc
+          registry-url: https://npm.pkg.github.com
+          scope: '@citadel-guilds'
       - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GUILD_PACKAGES_READ_TOKEN }}
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
@@ -79,6 +83,8 @@ jobs:
 
   attest:
     name: Attest artifact
+    outputs:
+      bundle-id: ${{ steps.bundle.outputs.artifact-id }}
     needs: build
     if: github.event_name == 'push' && github.repository == 'citadel-nexus/guild-intelligence' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
@@ -99,9 +105,54 @@ jobs:
         with:
           subject-path: ${{ runner.temp }}/artifact/guild-intelligence-${{ github.sha }}.tar.gz
       - name: Retain signed verification bundle
+        id: bundle
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: provenance-${{ github.sha }}
           path: ${{ steps.attest.outputs.bundle-path }}
           if-no-files-found: error
           retention-days: 30
+
+  verify:
+    name: Verify attestation
+    needs: [build, attest]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          path: ${{ runner.temp }}/verification/artifact
+          merge-multiple: true
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          artifact-ids: ${{ needs.attest.outputs.bundle-id }}
+          path: ${{ runner.temp }}/verification/bundle
+          merge-multiple: true
+      - name: Verify provenance and reject tampering and the wrong signer
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          artifact="$RUNNER_TEMP/verification/artifact/guild-intelligence-$GITHUB_SHA.tar.gz"
+          mapfile -t bundles < <(find "$RUNNER_TEMP/verification/bundle" -type f -name '*.jsonl')
+          test "${#bundles[@]}" -eq 1
+          bundle="${bundles[0]}"
+          signer="$GITHUB_REPOSITORY/.github/workflows/build-provenance.yml"
+          verify() {
+            gh attestation verify "$1" --bundle "$bundle" --repo "$GITHUB_REPOSITORY" \
+              --signer-workflow "$2" --source-ref refs/heads/main --source-digest "$GITHUB_SHA" \
+              --predicate-type https://slsa.dev/provenance/v1 --deny-self-hosted-runners
+          }
+          verify "$artifact" "$signer"
+          cp "$artifact" "$artifact.tampered"
+          printf '\nmodified\n' >> "$artifact.tampered"
+          if verify "$artifact.tampered" "$signer"; then
+            echo 'FAIL: tampered artifact was accepted'
+            exit 1
+          fi
+          if verify "$artifact" "$GITHUB_REPOSITORY/.github/workflows/wrong-signer.yml"; then
+            echo 'FAIL: wrong signer identity was accepted'
+            exit 1
+          fi
+          echo 'PASS: trusted artifact verified; tampered artifact and wrong signer rejected'
