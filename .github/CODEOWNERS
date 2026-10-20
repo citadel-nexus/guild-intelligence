@@ -12,13 +12,13 @@
 # EnumType: ConfigDoc
 # EnumEdges: DEPENDS_ON GOVERNANCE.md
 # DAG Node: none
-# Intent: Route reviews through the guildmaster leads team while preserving SDK co-ownership.
+# Intent: Route reviews through the confirmed guildmaster team while preserving SDK co-ownership.
 # ───────────────────────────────────────────────────────────────
 
-# Oracle (GitLab oracle) is guildmaster; a GitLab identity is not a GitHub identity.
-# Admin must confirm Oracle's GitHub membership and write access in this existing team.
-* @citadel-nexus/guild-intelligence-leads
+# Operator-confirmed guildmaster owner for Oracle (GitLab oracle).
+# Automation identity: oracle-intelligence-guildmaster; GitHub Apps cannot own code.
+* @citadel-nexus/guild-intelligence
 
 # Preserve SDK interface co-ownership. GitHub accepts either listed owner;
 # GOVERNANCE.md additionally requires guildmaster approval for security changes.
-src/index.ts @citadel-nexus/guild-intelligence-leads @citadel-nexus/sdk-core
+src/index.ts @citadel-nexus/guild-intelligence @citadel-nexus/sdk-core

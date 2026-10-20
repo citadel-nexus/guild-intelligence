@@ -1,5 +1,5 @@
 {
-  "name": "Intelligence default branch governance",
+  "name": "Intelligence governance (expected actor: oracle-intelligence-guildmaster)",
   "target": "branch",
   "enforcement": "disabled",
   "bypass_actors": [],

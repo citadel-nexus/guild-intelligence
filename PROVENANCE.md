@@ -51,8 +51,13 @@ TypeScript/ESLint configuration. The existing npm install/test/lint/build
 checks fail. The workflow intentionally fails closed until a separate
 build-toolchain dispatch repairs that scaffold; it cannot issue a real
 attestation yet. No GitHub-hosted signing run was performed in this session.
-See `GOVERNANCE.md` for the identity, Actions permissions and ruleset settings
-an administrator must enable. There are no deployment steps in this workflow.
+The operator-confirmed guildmaster owner is `@citadel-nexus/guild-intelligence`;
+Oracle's automation identity and expected governance actor is the GitHub App
+`oracle-intelligence-guildmaster`. The ruleset records this actor descriptively;
+it grants no bypass. Provenance still uses the GitHub Actions workflow's OIDC
+identity, so the verification constraints below must not be replaced with the
+app slug. See `GOVERNANCE.md` for Actions permissions and ruleset settings an
+administrator must enable. There are no deployment steps in this workflow.
 
 ## Verify a trusted artifact
 

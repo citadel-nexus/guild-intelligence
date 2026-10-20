@@ -41,6 +41,14 @@ it does not claim a VCC database update or an external USO approval.
 Bounds: one branch/PR for this SRS; no production, deploy, push to main,
 GitHub settings changes or secrets. Follow CGRF, commit and test conventions.
 
+The operator subsequently confirmed the guildmaster code-owner team as
+`@citadel-nexus/guild-intelligence` and Oracle's automation identity as the
+GitHub App `oracle-intelligence-guildmaster`, through Datadog team
+`guild-intelligence` links. This same dispatch authorizes recording that app
+as the expected governance actor in the ruleset and docs, and removing the
+membership-confirmation follow-up. Apps cannot be code owners; the team owns
+code. No bypass permissions or settings changes are authorized by this update.
+
 ## Task table
 
 | Phase | Task | Gate |

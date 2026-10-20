@@ -20,8 +20,16 @@
 # Intelligence Guild governance
 
 Owner: Citadel Nexus Inc. Guildmaster: **Oracle** (GitLab user `oracle`).
-Datadog team handle: `guild-intelligence` (an observability team, not a GitHub
-CODEOWNERS identifier).
+Datadog team handle: `guild-intelligence`. The operator confirmed these
+GitHub identities through that team's links:
+
+- Guildmaster code owner: [@citadel-nexus/guild-intelligence](https://github.com/orgs/citadel-nexus/teams/guild-intelligence).
+- Oracle's automation identity and expected governance actor:
+  [oracle-intelligence-guildmaster](https://github.com/apps/oracle-intelligence-guildmaster)
+  (GitHub App).
+
+GitHub Apps cannot be CODEOWNERS; the confirmed team owns code on Oracle's
+behalf.
 
 ## Charter and scope
 
@@ -41,13 +49,13 @@ stale reviews, the latest pusher cannot provide the final required approval,
 and review threads must be resolved. Governance/policy changes follow these
 same rules. Record the decision and any delegation in the PR.
 
-`.github/CODEOWNERS` routes ownership through the existing
-`@citadel-nexus/guild-intelligence-leads` team. An admin must confirm that
-Oracle's verified GitHub account belongs to that visible team with explicit
-write access. Do not assume GitLab `oracle` equals GitHub `@oracle`.
+`.github/CODEOWNERS` routes guildmaster ownership through the confirmed
+`@citadel-nexus/guild-intelligence` team. The
+`oracle-intelligence-guildmaster` app is Oracle's automation identity,
+not an individual reviewer or a substitute for required team reviews.
 The SDK team remains a co-owner of `src/index.ts`; GitHub accepts approval
 from either listed owner, so the additional guildmaster requirement is a
-human review policy. An individual GitHub mapping remains unconfirmed.
+human review policy.
 
 Escalate cross-guild decisions, ownership conflicts, disputed risk acceptance
 or unavailable/conflicted guildmaster approvals to the **guildmasters group**
@@ -60,11 +68,21 @@ Vulnerabilities go to `security@citadel-nexus.com`, not public issues.
 The verified default branch is `main`. `.github/rulesets/default-branch.json`
 is a GitHub branch-ruleset import document, **not automatically applied
 configuration**. It targets `~DEFAULT_BRANCH` and ships with enforcement
-`disabled` for staging. An admin must:
+`disabled` for staging. The JSON's `name` records
+`oracle-intelligence-guildmaster` as the expected governance automation actor;
+its companion `.cgrf.yaml` also records the actor and code-owner team as
+structured metadata. GitHub's branch-ruleset schema has no generic
+`expected_actor` constraint. This is descriptive identity metadata, not actor
+enforcement or a bypass grant. The app remains subject to required reviews,
+signed commits and status checks; `bypass_actors` remains empty. Required
+status-check publisher IDs continue to identify GitHub Actions, which runs
+the build and attestation workflow, rather than Oracle's app.
 
-1. Confirm the leads and SDK teams exist, are visible, have repository write
-   access, and the leads team contains Oracle's verified GitHub identity.
-   Inspect GitHub's CODEOWNERS diagnostics after the file is on the base branch.
+An admin must:
+
+1. Ensure the confirmed guild team and SDK co-owner team have the visibility
+   and repository write access required by CODEOWNERS. Inspect GitHub's
+   CODEOWNERS diagnostics after the file is on the base branch.
 2. Repair the existing npm scaffold in a separate SRS: a reproducible lockfile,
    declared compiler/test/lint tools, TypeScript/ESLint configs and runnable tests.
    This PR does not relax checks to conceal those failures.

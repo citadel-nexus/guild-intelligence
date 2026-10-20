@@ -213,7 +213,7 @@
       "dependencies": [
         ".bits/srs/SRS-CN-INTELLIGENCE-GOVERNANCE-001.md"
       ],
-      "lines": 67,
+      "lines": 75,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Record the exact staging authorization and executable acceptance gates.",
@@ -257,7 +257,7 @@
       "lines": 24,
       "caps_grade": "pending",
       "ck_stamp": "pending",
-      "intent_statement": "Route reviews through the guildmaster leads team while preserving SDK co-ownership.",
+      "intent_statement": "Route reviews through the confirmed guildmaster team while preserving SDK co-ownership.",
       "objective_id": "DISP-GOVERNANCE-intelligence",
       "outcome": "stored",
       "supersedes": false,
@@ -296,7 +296,7 @@
         ".github/rulesets/default-branch.json",
         "PROVENANCE.md"
       ],
-      "lines": 101,
+      "lines": 119,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Assign guild accountability and explicit admin activation requirements.",
@@ -388,7 +388,7 @@
       "dependencies": [
         ".github/rulesets/default-branch.json"
       ],
-      "lines": 39,
+      "lines": 45,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Describe provenance for the staged branch-ruleset JSON.",
@@ -471,7 +471,7 @@
         ".github/workflows/build-provenance.yml",
         "GOVERNANCE.md"
       ],
-      "lines": 120,
+      "lines": 125,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Enable consumers to verify signed artifact identity and digest without confusing configuration with evidence.",
@@ -526,7 +526,7 @@
         ".github/workflows/build-provenance.yml",
         ".github/rulesets/default-branch.json"
       ],
-      "lines": 254,
+      "lines": 270,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Exercise signing authorization, archive inclusion, staged protections and governance evidence consistency.",
@@ -577,7 +577,7 @@
       "dependencies": [
         ".bits/queue/DISP-GOVERNANCE-intelligence.md"
       ],
-      "lines": 689,
+      "lines": 702,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Preserve auditable file relationships and honest validation outcomes for this staging dispatch.",
@@ -672,12 +672,25 @@
       "timestamp": "2026-10-20T17:34:27.245119+00:00",
       "commit_sha": null,
       "smoke_result": "12/12"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": ".bits/tests/test_governance.py",
+      "description": "All 12 governance tests passed after adopting the operator-confirmed guild-intelligence owner team and oracle-intelligence-guildmaster automation actor. Ruleset identity remains descriptive; bypass actors remain empty and status checks remain bound to GitHub Actions.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "timestamp": "2026-10-20T17:38:36.246455+00:00",
+      "commit_sha": null,
+      "smoke_result": "12/12"
     }
   ],
   "summary": {
     "type_a_count": 15,
     "type_b_count": 18,
-    "type_c_count": 2,
+    "type_c_count": 3,
     "ioo_compliance": true,
     "dkg_orphans": 0,
     "dispatch_id": "DISP-GOVERNANCE-intelligence",

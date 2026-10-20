@@ -90,6 +90,16 @@ class GovernanceTests(unittest.TestCase):
         ruleset = json.loads((ROOT / ".github/rulesets/default-branch.json").read_text())
         self.assertEqual(ruleset["enforcement"], "disabled")
         self.assertEqual(ruleset["bypass_actors"], [])
+        self.assertEqual(ruleset["name"],
+                         "Intelligence governance (expected actor: oracle-intelligence-guildmaster)")
+        # Keep the import JSON schema-compatible; actor metadata grants no authority.
+        self.assertEqual(set(ruleset), {"name", "target", "enforcement", "bypass_actors", "conditions", "rules"})
+        metadata = yaml.safe_load((ROOT / ".github/rulesets/default-branch.cgrf.yaml").read_text())
+        self.assertEqual(metadata["expected_actor"], {
+            "type": "GitHubApp", "slug": "oracle-intelligence-guildmaster",
+            "url": "https://github.com/apps/oracle-intelligence-guildmaster",
+        })
+        self.assertEqual(metadata["code_owner_team"], "@citadel-nexus/guild-intelligence")
         self.assertEqual(ruleset["conditions"]["ref_name"], {"include": ["~DEFAULT_BRANCH"], "exclude": []})
         rules = {rule["type"]: rule.get("parameters", {}) for rule in ruleset["rules"]}
         self.assertTrue({"required_signatures", "non_fast_forward", "deletion"} <= rules.keys())
@@ -118,13 +128,19 @@ class GovernanceTests(unittest.TestCase):
     def test_ownership_does_not_invent_a_github_identity(self) -> None:
         owners = (ROOT / ".github/CODEOWNERS").read_text()
         active = [line for line in owners.splitlines() if line and not line.startswith("#")]
-        self.assertEqual(active[0], "* @citadel-nexus/guild-intelligence-leads")
+        self.assertEqual(active[0], "* @citadel-nexus/guild-intelligence")
         self.assertIn("@citadel-nexus/sdk-core", active[1])
-        self.assertIn("@citadel-nexus/guild-intelligence-leads", active[1])
+        self.assertIn("@citadel-nexus/guild-intelligence", active[1].split())
+        self.assertNotIn("oracle-intelligence-guildmaster", "\n".join(active))
+        self.assertNotIn("guild-intelligence-leads", owners)
         self.assertNotRegex("\n".join(active), r"(?:^|\s)@oracle(?:\s|$)")
         charter = (ROOT / "GOVERNANCE.md").read_text()
         for term in ("Oracle", "Nemesis", "Suricata", "Wazuh", "memory systems", "guildmasters group"):
             self.assertIn(term, charter)
+        self.assertIn("https://github.com/apps/oracle-intelligence-guildmaster", charter)
+        self.assertIn("https://github.com/orgs/citadel-nexus/teams/guild-intelligence", charter)
+        self.assertIn("descriptive identity metadata", charter)
+        self.assertNotIn("membership remains unconfirmed", charter)
 
     def test_operator_authorization_and_registered_srs(self) -> None:
         registry = yaml.safe_load((ROOT / ".bits/srs_registry.yml").read_text())
