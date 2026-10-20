@@ -92,7 +92,7 @@
       "dependencies": [
         "AGENTS.md"
       ],
-      "lines": 43,
+      "lines": 46,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bound bootstrap paths and validation to the authorized governance SRS.",
@@ -131,7 +131,7 @@
       "enum_type": "ConfigDoc",
       "functions": [],
       "dependencies": [],
-      "lines": 48,
+      "lines": 72,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Register the authorized governance scope while preserving the living-world SRS.",
@@ -296,7 +296,7 @@
         ".github/rulesets/default-branch.json",
         "PROVENANCE.md"
       ],
-      "lines": 119,
+      "lines": 120,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Assign guild accountability and explicit admin activation requirements.",
@@ -429,7 +429,7 @@
       "dependencies": [
         ".bits/tests/test_governance.py"
       ],
-      "lines": 104,
+      "lines": 107,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bind compiled artifacts to trusted default-branch builds with keyless signed SLSA provenance.",
@@ -471,7 +471,7 @@
         ".github/workflows/build-provenance.yml",
         "GOVERNANCE.md"
       ],
-      "lines": 125,
+      "lines": 134,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Enable consumers to verify signed artifact identity and digest without confusing configuration with evidence.",

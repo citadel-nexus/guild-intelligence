@@ -1,0 +1,42 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: package.cgrf.yaml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: package.json
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON package.json
+# DAG Node: none
+# Intent: Describe governance metadata for package.json.
+# ───────────────────────────────────────────────────────────────
+
+artifact: package.json
+artifact_enum_edges:
+  - DEPENDS_ON .nvmrc
+  - DEPENDS_ON tsconfig.json
+  - DEPENDS_ON tsconfig.build.json
+  - DEPENDS_ON eslint.config.mjs
+  - DEPENDS_ON vitest.config.ts
+
+# CGRF for the adjacent machine-readable artifact:
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: package.json
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .nvmrc, tsconfig.json, tsconfig.build.json, eslint.config.mjs, vitest.config.ts
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON .nvmrc; DEPENDS_ON tsconfig.json; DEPENDS_ON tsconfig.build.json; DEPENDS_ON eslint.config.mjs; DEPENDS_ON vitest.config.ts
+# DAG Node: none
+# Intent: Declare the actual compiler, lint and test dependencies required by the npm scripts.
+# ───────────────────────────────────────────────────────────────

@@ -1,0 +1,38 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .nvmrc.cgrf.yaml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .nvmrc
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON .nvmrc
+# DAG Node: none
+# Intent: Describe governance metadata for .nvmrc.
+# ───────────────────────────────────────────────────────────────
+
+artifact: .nvmrc
+artifact_enum_edges:
+  - DEPENDS_ON SRS-CN-INTELLIGENCE-BUILD-001
+
+# CGRF for the adjacent machine-readable artifact:
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .nvmrc
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: none
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON SRS-CN-INTELLIGENCE-BUILD-001
+# DAG Node: none
+# Intent: Pin the Node runtime used by developers and CI.
+# ───────────────────────────────────────────────────────────────

@@ -1,0 +1,38 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: tsconfig.cgrf.yaml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: tsconfig.json
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON tsconfig.json
+# DAG Node: none
+# Intent: Describe governance metadata for tsconfig.json.
+# ───────────────────────────────────────────────────────────────
+
+artifact: tsconfig.json
+artifact_enum_edges:
+  - DEPENDS_ON package.json
+
+# CGRF for the adjacent machine-readable artifact:
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: tsconfig.json
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: package.json
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON package.json
+# DAG Node: none
+# Intent: Typecheck every source and test file with strict Node ESM resolution.
+# ───────────────────────────────────────────────────────────────

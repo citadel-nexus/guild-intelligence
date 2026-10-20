@@ -83,9 +83,10 @@ An admin must:
 1. Ensure the confirmed guild team and SDK co-owner team have the visibility
    and repository write access required by CODEOWNERS. Inspect GitHub's
    CODEOWNERS diagnostics after the file is on the base branch.
-2. Repair the existing npm scaffold in a separate SRS: a reproducible lockfile,
-   declared compiler/test/lint tools, TypeScript/ESLint configs and runnable tests.
-   This PR does not relax checks to conceal those failures.
+2. Complete dependency resolution under SRS-CN-INTELLIGENCE-BUILD-001:
+   the Node pin, compiler/linter/test declarations and configs are now present,
+   but approved SDK/registry access is still needed to generate the lockfile
+   and validate npm ci, typecheck, tests and build. Keep failing gates enforced.
 3. In Settings → Rules → Rulesets, import the JSON, review it, and set
    enforcement to **Active**. Require two approvals, code-owner review,
    resolved threads, stale-review dismissal, approval after the latest push,

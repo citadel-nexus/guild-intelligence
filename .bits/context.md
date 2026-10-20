@@ -19,8 +19,9 @@
 
 # Current staging context
 
-Active SRS: `SRS-CN-INTELLIGENCE-GOVERNANCE-001`.
-Active dispatch: `DISP-GOVERNANCE-intelligence` (`in_progress`).
+Active SRS: `SRS-CN-INTELLIGENCE-BUILD-001`.
+Active dispatch: `DISP-BUILD-intelligence` (`in_progress`).
+The operator authorized this separate staging build repair after PR #21 merged.
 Seat: BITS-CODEGEN. Authorization: explicit 2026-10-20 operator directive.
 The living-world SRS and dispatch remain unchanged and out of scope.
 
@@ -35,9 +36,11 @@ onto CKET stages; do not relocate GitHub discovery files into stage folders:
 - `11_COMMIT`: `.bits/` registry, context, queue, tests, output and
   `.github/` rulesets/workflows; JSON metadata inherits the payload stage.
 
-No service, runtime, private CNWB, deployment, or signing-key code is in scope.
+The build directive authorizes compiler-required source fixes and regression
+tests in native paths (logical 07_BUILD and 08_TEST), plus tooling under
+11_COMMIT. Private CNWB, deployment and signing-key code remain out of scope.
 CK, CAPS, and CKS results remain pending; the review target is B+/75.
 Missing application lockfile, compiler/test dependencies and configuration
-are existing scaffold blockers. Do not conceal them or invent build output.
+are existing scaffold blockers. This dispatch repairs them; do not conceal blockers or invent build output.
 The governance smoke suite uses Python unittest and PyYAML; npm checks
 remain required for a real build and are reported separately.

@@ -1,0 +1,26 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .dockerignore
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: docker/Dockerfile
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON docker/Dockerfile
+# DAG Node: none
+# Intent: Keep local dependency links, stale output and environment files out of Docker builds.
+# ───────────────────────────────────────────────────────────────
+
+node_modules
+dist
+coverage
+.git
+.bits
+.codex
+.env
+.env.*
+!.env.example

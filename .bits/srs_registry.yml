@@ -46,3 +46,27 @@ SRS-CN-INTELLIGENCE-GOVERNANCE-001:
     - PROVENANCE.md
     - .github/rulesets/
     - .github/workflows/build-provenance.yml
+
+SRS-CN-INTELLIGENCE-BUILD-001:
+  status: in_progress
+  title: Intelligence Guild reproducible build tooling repair
+  dispatch: DISP-BUILD-intelligence
+  spec: .bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md
+  mode: staging
+  cks_gate_target: B+/75
+  caps_minimum: pending
+  paths:
+    - package.json
+    - package-lock.json
+    - .nvmrc
+    - .npmrc
+    - tsconfig*.json
+    - eslint.config.mjs
+    - vitest.config.ts
+    - src/
+    - tests/
+    - .github/workflows/
+    - docker/Dockerfile
+    - .bits/
+    - PROVENANCE.md
+    - GOVERNANCE.md
