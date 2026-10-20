@@ -1,0 +1,689 @@
+{
+  "vectors": [
+    {
+      "type": "A",
+      "file_path": "AGENTS.md",
+      "cket_stage": "04_HYPOTHESIZE",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 49,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Define the operator-authorized staging bootstrap without granting future authority.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "AGENTS.md",
+      "target": "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "AGENTS.md depends on SRS-CN-INTELLIGENCE-GOVERNANCE-001 for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "CLAUDE.md",
+      "cket_stage": "04_HYPOTHESIZE",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        "AGENTS.md"
+      ],
+      "lines": 30,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Orient collaborating seats to the Intelligence Guild staging scope.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "CLAUDE.md",
+      "target": "AGENTS.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "CLAUDE.md depends on AGENTS.md for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/context.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "AGENTS.md"
+      ],
+      "lines": 43,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bound bootstrap paths and validation to the authorized governance SRS.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/context.md",
+      "target": "AGENTS.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/context.md depends on AGENTS.md for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs_registry.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 48,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Register the authorized governance scope while preserving the living-world SRS.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs_registry.yml",
+      "target": "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/srs_registry.yml depends on SRS-CN-INTELLIGENCE-GOVERNANCE-001 for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs/SRS-CN-INTELLIGENCE-GOVERNANCE-001.md",
+      "cket_stage": "04_HYPOTHESIZE",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs_registry.yml"
+      ],
+      "lines": 50,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Make the operator governance directive reviewable as a bounded SRS.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-INTELLIGENCE-GOVERNANCE-001.md",
+      "target": ".bits/srs_registry.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-INTELLIGENCE-GOVERNANCE-001.md depends on .bits/srs_registry.yml for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/queue/DISP-GOVERNANCE-intelligence.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs/SRS-CN-INTELLIGENCE-GOVERNANCE-001.md"
+      ],
+      "lines": 67,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Record the exact staging authorization and executable acceptance gates.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-GOVERNANCE-intelligence.md",
+      "target": ".bits/srs/SRS-CN-INTELLIGENCE-GOVERNANCE-001.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-GOVERNANCE-intelligence.md depends on .bits/srs/SRS-CN-INTELLIGENCE-GOVERNANCE-001.md for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/CODEOWNERS",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "GOVERNANCE.md"
+      ],
+      "lines": 24,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Route reviews through the guildmaster leads team while preserving SDK co-ownership.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/CODEOWNERS",
+      "target": "GOVERNANCE.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/CODEOWNERS depends on GOVERNANCE.md for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "GOVERNANCE.md",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".github/rulesets/default-branch.json",
+        "PROVENANCE.md"
+      ],
+      "lines": 101,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Assign guild accountability and explicit admin activation requirements.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": ".github/rulesets/default-branch.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends on .github/rulesets/default-branch.json for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": "PROVENANCE.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends on PROVENANCE.md for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/rulesets/default-branch.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "GOVERNANCE.md"
+      ],
+      "lines": 55,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Provide a staged importable default-branch protection policy.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/rulesets/default-branch.json",
+      "target": "GOVERNANCE.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/rulesets/default-branch.json depends on GOVERNANCE.md for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/rulesets/default-branch.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".github/rulesets/default-branch.json"
+      ],
+      "lines": 39,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Describe provenance for the staged branch-ruleset JSON.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/rulesets/default-branch.cgrf.yaml",
+      "target": ".github/rulesets/default-branch.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/rulesets/default-branch.cgrf.yaml depends on .github/rulesets/default-branch.json for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/build-provenance.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        ".bits/tests/test_governance.py"
+      ],
+      "lines": 104,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bind compiled artifacts to trusted default-branch builds with keyless signed SLSA provenance.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/build-provenance.yml",
+      "target": ".bits/tests/test_governance.py",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/build-provenance.yml depends on .bits/tests/test_governance.py for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "PROVENANCE.md",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".github/workflows/build-provenance.yml",
+        "GOVERNANCE.md"
+      ],
+      "lines": 120,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Enable consumers to verify signed artifact identity and digest without confusing configuration with evidence.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "PROVENANCE.md",
+      "target": ".github/workflows/build-provenance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "PROVENANCE.md depends on .github/workflows/build-provenance.yml for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "PROVENANCE.md",
+      "target": "GOVERNANCE.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "PROVENANCE.md depends on GOVERNANCE.md for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/tests/test_governance.py",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Test",
+      "functions": [
+        "workflow",
+        "signing_policy"
+      ],
+      "dependencies": [
+        ".github/workflows/build-provenance.yml",
+        ".github/rulesets/default-branch.json"
+      ],
+      "lines": 254,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Exercise signing authorization, archive inclusion, staged protections and governance evidence consistency.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_governance.py",
+      "target": ".github/workflows/build-provenance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_governance.py depends on .github/workflows/build-provenance.yml for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_governance.py",
+      "target": ".github/rulesets/default-branch.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_governance.py depends on .github/rulesets/default-branch.json for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-intelligence/memory.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Schema",
+      "functions": [],
+      "dependencies": [
+        ".bits/queue/DISP-GOVERNANCE-intelligence.md"
+      ],
+      "lines": 689,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve auditable file relationships and honest validation outcomes for this staging dispatch.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-intelligence/memory.json",
+      "target": ".bits/queue/DISP-GOVERNANCE-intelligence.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-intelligence/memory.json depends on .bits/queue/DISP-GOVERNANCE-intelligence.md for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-intelligence/memory.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/out/DISP-GOVERNANCE-intelligence/memory.json"
+      ],
+      "lines": 38,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Attach CGRF provenance and declared edges to the JSON memory payload.",
+      "objective_id": "DISP-GOVERNANCE-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+        "governance-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-intelligence/memory.cgrf.yaml",
+      "target": ".bits/out/DISP-GOVERNANCE-intelligence/memory.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-intelligence/memory.cgrf.yaml depends on .bits/out/DISP-GOVERNANCE-intelligence/memory.json for its governance contract.",
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "C",
+      "event_type": "failure",
+      "file_path": null,
+      "description": "Existing npm checks blocked: npm ci --offline --ignore-scripts has no lockfile; npm test lacks Vitest; npm run lint lacks ESLint configuration; npm run build lacks tsc. No toolchain repair is authorized by this SRS.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "timestamp": "2026-10-20T17:34:27.245119+00:00",
+      "commit_sha": null,
+      "smoke_result": null
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": null,
+      "description": "12 local unittest cases passed, including negative signing-policy mutations and real tar packaging. Hosted OIDC signing, attestation verification and tamper rejection remain unexecuted.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-intelligence",
+      "timestamp": "2026-10-20T17:34:27.245119+00:00",
+      "commit_sha": null,
+      "smoke_result": "12/12"
+    }
+  ],
+  "summary": {
+    "type_a_count": 15,
+    "type_b_count": 18,
+    "type_c_count": 2,
+    "ioo_compliance": true,
+    "dkg_orphans": 0,
+    "dispatch_id": "DISP-GOVERNANCE-intelligence",
+    "srs_codes": [
+      "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+    ],
+    "seat": "BITS-CODEGEN"
+  }
+}

@@ -1,5 +1,24 @@
-# Guild code owners — all PRs require review from the guild lead team
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .github/CODEOWNERS
+# Stage: 06_PLAN
+# SRS: SRS-CN-INTELLIGENCE-GOVERNANCE-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-GOVERNANCE-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: GOVERNANCE.md
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON GOVERNANCE.md
+# DAG Node: none
+# Intent: Route reviews through the guildmaster leads team while preserving SDK co-ownership.
+# ───────────────────────────────────────────────────────────────
+
+# Oracle (GitLab oracle) is guildmaster; a GitLab identity is not a GitHub identity.
+# Admin must confirm Oracle's GitHub membership and write access in this existing team.
 * @citadel-nexus/guild-intelligence-leads
 
-# Guild SDK public interface
-src/index.ts @citadel-nexus/sdk-core
+# Preserve SDK interface co-ownership. GitHub accepts either listed owner;
+# GOVERNANCE.md additionally requires guildmaster approval for security changes.
+src/index.ts @citadel-nexus/guild-intelligence-leads @citadel-nexus/sdk-core

@@ -1,3 +1,20 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .bits/srs_registry.yml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-GOVERNANCE-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-GOVERNANCE-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: none
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON SRS-CN-INTELLIGENCE-GOVERNANCE-001
+# DAG Node: none
+# Intent: Register the authorized governance scope while preserving the living-world SRS.
+# ───────────────────────────────────────────────────────────────
+
 # Living-World SRS registry
 
 SRS-CN-INTELLIGENCE-LIVINGWORLD-001:
@@ -10,3 +27,22 @@ SRS-CN-INTELLIGENCE-LIVINGWORLD-001:
   notes: >
     Public contract for the intelligence floor of the Aincrad living world — the
     citadel.intelligence.* events + /realm/intelligence.json feed the game reads. Public-safe only.
+
+SRS-CN-INTELLIGENCE-GOVERNANCE-001:
+  status: in_progress
+  title: Intelligence Guild ownership governance and signed build provenance
+  dispatch: DISP-GOVERNANCE-intelligence
+  spec: .bits/srs/SRS-CN-INTELLIGENCE-GOVERNANCE-001.md
+  mode: staging
+  cks_gate_target: B+/75
+  caps_minimum: pending
+  caps_note: Operator directive did not specify a numeric CAPS minimum; guildmaster review required.
+  paths:
+    - AGENTS.md
+    - CLAUDE.md
+    - .bits/
+    - .github/CODEOWNERS
+    - GOVERNANCE.md
+    - PROVENANCE.md
+    - .github/rulesets/
+    - .github/workflows/build-provenance.yml
