@@ -1,0 +1,169 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .github/workflows/lockfile-refresh.yml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .nvmrc, package.json, .bits/scripts/record_lockfile.py, BUILD.md
+# EnumType: Workflow
+# EnumEdges: DEPENDS_ON .nvmrc; DEPENDS_ON package.json; DEPENDS_ON .bits/scripts/record_lockfile.py; DEPENDS_ON BUILD.md
+# DAG Node: none
+# Intent: Resolve dependencies on a trusted hosted runner and propose only a fully validated lockfile.
+# ───────────────────────────────────────────────────────────────
+
+name: Lockfile refresh
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lockfile-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'citadel-nexus/guild-intelligence' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    outputs:
+      artifact-id: ${{ steps.candidate.outputs.artifact-id }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          registry-url: https://npm.pkg.github.com
+          scope: '@citadel-guilds'
+      - name: Resolve real registry metadata
+        run: npm install --package-lock-only --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Clean install
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - name: Record lockfile governance evidence
+        run: python .bits/scripts/record_lockfile.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        id: candidate
+        with:
+          name: validated-lockfile-${{ github.sha }}
+          path: |
+            package-lock.json
+            package-lock.cgrf.yaml
+            .bits/out/DISP-BUILD-intelligence/memory.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: refresh
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - name: Require the validated base to remain current
+        shell: bash
+        env:
+          VALIDATED_SHA: ${{ github.sha }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          test "$DEFAULT_BRANCH" != 'bits/lockfile-refresh'
+          test "$(git rev-parse HEAD)" = "$VALIDATED_SHA"
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          artifact-ids: ${{ needs.refresh.outputs.artifact-id }}
+          path: .
+          merge-multiple: true
+      - name: Open or update the lockfile PR
+        uses: peter-evans/create-pull-request@5e914681df9dc83aa4e4905692ca88beb2f9e91f # v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: bits/lockfile-refresh
+          base: ${{ github.event.repository.default_branch }}
+          sign-commits: true
+          add-paths: |
+            package-lock.json
+            package-lock.cgrf.yaml
+            .bits/out/DISP-BUILD-intelligence/memory.json
+          commit-message: |
+            fix(guild): resolve the validated dependency lockfile
+
+            Phase: D
+            Files: package-lock.json, package-lock.cgrf.yaml, .bits/out/DISP-BUILD-intelligence/memory.json
+            Smoke: 5/5 npm gates passing
+            SRS: SRS-CN-INTELLIGENCE-BUILD-001
+            Dispatch: DISP-BUILD-intelligence
+            CK: pending
+          title: 'fix(guild): refresh lockfile [SRS-CN-INTELLIGENCE-BUILD-001] [Dispatch:DISP-BUILD-intelligence]'
+          body: |
+            ## Summary
+            Resolve the actual SDK and public npm dependency graph so clean installs can reproduce this validated build.
+
+            ## Changes
+            Generated npm lockfile, CGRF companion and dispatch memory evidence only. No runtime substitute, settings change or deployment.
+
+            ## Testing
+            npm install --package-lock-only --ignore-scripts, npm ci, lint, typecheck, test and build succeeded in the manual refresh run. Hosted attestation verification remains a separate post-merge gate.
+
+            ## SRS Code
+            SRS: SRS-CN-INTELLIGENCE-BUILD-001
+
+            ## Type of Change
+            - [ ] feat — new feature
+            - [x] fix — bug fix
+            - [ ] docs — documentation only
+            - [ ] chore — maintenance, refactor
+
+            ## Checklist
+            - [ ] SRS code referenced in branch name and commit — operator requires the fixed bits/lockfile-refresh branch; commit includes SRS
+            - [x] `npm test` passes
+            - [x] `npm run lint` passes
+            - [x] No private CNWB package imports
+            - [x] No hardcoded NATS subjects or Supabase URLs
+            - [x] No credentials or secrets in code
+            - [ ] SAKE file stub added for new modules — no new runtime modules
+            - [ ] Reviewed by at least 1 guild member
+
+            ## Related Issues
+            Dispatch: DISP-BUILD-intelligence. See BUILD.md for required admin activation and GITHUB_TOKEN PR-trigger limitations.
+
+            ## Memory
+            .bits/out/DISP-BUILD-intelligence/memory.json
+
+            ## CKET
+            Lockfile and companion metadata: 11_COMMIT. Existing dispatch memory is refreshed after all gates pass. CK/CAPS/CKS remain pending; REFLEX is deferred.
+
+            ## Risk + Rollback
+            Review resolved package URLs and integrity values, then obtain code-owner approval and required checks. Revert only this lockfile PR if necessary; no publishing or deployment ran here.
+
+            ## §15 Report Template
+            §1 SUMMARY: PARTIAL for the overall dispatch; lockfile validation succeeded. Seat BITS-CODEGEN. Dispatch DISP-BUILD-intelligence. SRS SRS-CN-INTELLIGENCE-BUILD-001. Branch bits/lockfile-refresh. Smoke 5/5 npm gates. CK/CAPS/CKS pending.
+            §2 TASK RESULTS: Lockfile generation and validation PASS. Verify with npm ci, npm run lint, npm run typecheck, npm test, npm run build. Files: lockfile, CGRF companion, dispatch memory. CKET 11_COMMIT.
+            §3 SMOKE TEST RESULTS: install, lint, typecheck, test and build each exited 0 before this PR step. The workflow fails before publication on any failed gate.
+            §4 MEMORY INGEST: .bits/out/DISP-BUILD-intelligence/memory.json contains updated A/B/C vectors, counts and line metadata. Verify its summary and lockfile entries.
+            §5 CKET FILING: 11_COMMIT; generated JSON has a CGRF companion; REFLEX deferred.
+            §6 GOVERNANCE: Citadel Nexus Inc.; license unchanged; credential-bearing resolved URLs rejected; no payment code touched; no settings or secrets changed.
+            §7 NEXT ACTIONS: Code-owner approval, required PR checks and post-merge signed-provenance verification. GITHUB_TOKEN PR events may require a human-triggered rerun; see BUILD.md.

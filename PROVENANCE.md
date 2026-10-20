@@ -44,6 +44,22 @@ not that code is vulnerability-free or that tests passed. The existing `build`
 CI job remains the separate lint/test gate enforced by branch protection.
 New workflow files do not retrofit signatures onto older artifacts.
 
+## Automated positive and negative verification
+
+After signing, a separate read-only **Verify attestation** job downloads the
+build artifact and signed bundle by their exact same-run artifact IDs. It
+runs `gh attestation verify` with repository, signer workflow, source ref,
+source SHA, SLSA v1 predicate and hosted-runner constraints. A valid artifact
+must verify first. The job then appends bytes to a copy of the artifact and
+requires verification to fail, and verifies the original with a deliberately
+wrong signer workflow identity and requires that to fail too. Unexpected
+acceptance of either negative case fails the job. No artifact is executed.
+
+The verifier inherits only `contents: read`; it has no OIDC or write token.
+The signer still has no shell or checkout steps. The job is a post-merge gate
+and is not a required PR context. These hosted checks remain unexecuted in
+this sandbox; local tests exercise their control flow, not real signatures.
+
 ## Current readiness and administrator work
 
 The staging build repair declares the compiler, lint and test tools, pins
@@ -58,7 +74,9 @@ lockfile is available yet, so clean npm ci, full typechecking, application
 tests and a real distribution build remain blocked. Local lint uses the exact
 declared preinstalled compiler/linter packages for diagnostics, not a claimed
 clean install. No hosted signing run has been performed. See
-`.bits/queue/DISP-BUILD-intelligence.md` for the authorized follow-up.
+`BUILD.md` for the manual **Lockfile refresh** workflow and its package/PR
+permission prerequisites, and `.bits/queue/DISP-BUILD-intelligence.md` for
+the authorized follow-up.
 
 The operator-confirmed guildmaster owner is `@citadel-nexus/guild-intelligence`;
 Oracle's automation identity and expected governance actor is the GitHub App

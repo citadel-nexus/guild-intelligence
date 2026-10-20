@@ -96,7 +96,7 @@
       "dependencies": [
         ".bits/queue/DISP-BUILD-intelligence.md"
       ],
-      "lines": 1621,
+      "lines": 1890,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Preserve the authorized build-repair file graph and measured validation blockers.",
@@ -139,7 +139,7 @@
         "package.json",
         ".github/workflows/build-provenance.yml"
       ],
-      "lines": 78,
+      "lines": 105,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Record measured build-repair results without conflating offline diagnostics with a clean install.",
@@ -242,7 +242,7 @@
       "dependencies": [
         ".bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md"
       ],
-      "lines": 67,
+      "lines": 81,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Record build-repair authorization, gates and unresolved dependency access.",
@@ -283,7 +283,7 @@
       "dependencies": [
         ".bits/srs_registry.yml"
       ],
-      "lines": 52,
+      "lines": 63,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bound the operator-authorized build repair and its acceptance criteria.",
@@ -323,7 +323,7 @@
       "enum_type": "ConfigDoc",
       "functions": [],
       "dependencies": [],
-      "lines": 72,
+      "lines": 73,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Register the authorized governance scope while preserving the living-world SRS.",
@@ -480,7 +480,7 @@
       "dependencies": [
         ".bits/tests/test_governance.py"
       ],
-      "lines": 107,
+      "lines": 158,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bind compiled artifacts to trusted default-branch builds with keyless signed SLSA provenance.",
@@ -522,7 +522,7 @@
         ".nvmrc",
         "package.json"
       ],
-      "lines": 56,
+      "lines": 60,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Run quality gates with the pinned Node version and valid GHCR credential expressions.",
@@ -574,7 +574,7 @@
         ".nvmrc",
         "package.json"
       ],
-      "lines": 47,
+      "lines": 49,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Use the shared Node pin and quality gates before the existing release publication.",
@@ -625,7 +625,7 @@
       "dependencies": [
         ".nvmrc"
       ],
-      "lines": 60,
+      "lines": 64,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Keep CodeQL and secret scanning while aligning the analysis Node runtime.",
@@ -881,7 +881,7 @@
         ".github/workflows/build-provenance.yml",
         "GOVERNANCE.md"
       ],
-      "lines": 134,
+      "lines": 152,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Enable consumers to verify signed artifact identity and digest without confusing configuration with evidence.",
@@ -1604,12 +1604,281 @@
       "timestamp": "2026-10-20T18:01:19.414539+00:00",
       "commit_sha": null,
       "smoke_result": "1/1"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/lockfile-refresh.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        ".nvmrc",
+        "package.json",
+        ".bits/scripts/record_lockfile.py",
+        "BUILD.md"
+      ],
+      "lines": 169,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Resolve dependencies on a trusted hosted runner and propose only a fully validated lockfile.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "hosted-build-validation"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/lockfile-refresh.yml",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/lockfile-refresh.yml depends on .nvmrc for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/lockfile-refresh.yml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/lockfile-refresh.yml depends on package.json for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/lockfile-refresh.yml",
+      "target": ".bits/scripts/record_lockfile.py",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/lockfile-refresh.yml depends on .bits/scripts/record_lockfile.py for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/lockfile-refresh.yml",
+      "target": "BUILD.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/lockfile-refresh.yml depends on BUILD.md for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/scripts/record_lockfile.py",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [
+        "main"
+      ],
+      "dependencies": [
+        "package.json",
+        ".bits/out/DISP-BUILD-intelligence/memory.json"
+      ],
+      "lines": 93,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Record genuine hosted lockfile validation without changing runtime dependencies.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "hosted-build-validation"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/scripts/record_lockfile.py",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/scripts/record_lockfile.py depends on package.json for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/scripts/record_lockfile.py",
+      "target": ".bits/out/DISP-BUILD-intelligence/memory.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/scripts/record_lockfile.py depends on .bits/out/DISP-BUILD-intelligence/memory.json for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "BUILD.md",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".github/workflows/lockfile-refresh.yml",
+        ".github/rulesets/default-branch.json",
+        "PROVENANCE.md"
+      ],
+      "lines": 115,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Explain the gated hosted lockfile flow and required administrator activation.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "hosted-build-validation"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "BUILD.md",
+      "target": ".github/workflows/lockfile-refresh.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "BUILD.md depends on .github/workflows/lockfile-refresh.yml for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "BUILD.md",
+      "target": ".github/rulesets/default-branch.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "BUILD.md depends on .github/rulesets/default-branch.json for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "BUILD.md",
+      "target": "PROVENANCE.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "BUILD.md depends on PROVENANCE.md for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/tests/test_hosted_build.py",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [
+        "load_workflow"
+      ],
+      "dependencies": [
+        ".github/workflows/lockfile-refresh.yml",
+        ".github/workflows/build-provenance.yml",
+        ".bits/scripts/record_lockfile.py"
+      ],
+      "lines": 181,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Test manual refresh privileges, exact artifact verification and rejection paths without network access.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "hosted-build-validation"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_hosted_build.py",
+      "target": ".github/workflows/lockfile-refresh.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_hosted_build.py depends on .github/workflows/lockfile-refresh.yml for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_hosted_build.py",
+      "target": ".github/workflows/build-provenance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_hosted_build.py depends on .github/workflows/build-provenance.yml for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_hosted_build.py",
+      "target": ".bits/scripts/record_lockfile.py",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_hosted_build.py depends on .bits/scripts/record_lockfile.py for the hosted build validation contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": ".bits/tests/test_hosted_build.py",
+      "description": "22 local policy tests passed, including the unchanged 12 governance tests and verifier negative-path tests. Hosted lockfile resolution and real cryptographic verification remain unexecuted. Offline npm ci/typecheck/test/build remain dependency-blocked; diagnostic lint passes.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "timestamp": "2026-10-20T18:23:42.342097+00:00",
+      "commit_sha": null,
+      "smoke_result": "22/22"
     }
   ],
   "summary": {
-    "type_a_count": 34,
-    "type_b_count": 49,
-    "type_c_count": 3,
+    "type_a_count": 38,
+    "type_b_count": 61,
+    "type_c_count": 4,
     "ioo_compliance": true,
     "dkg_orphans": 0,
     "dispatch_id": "DISP-BUILD-intelligence",

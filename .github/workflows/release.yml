@@ -34,6 +34,8 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@citadel-guilds'
       - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test

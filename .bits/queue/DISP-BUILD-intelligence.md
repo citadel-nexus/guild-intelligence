@@ -26,8 +26,8 @@
 - operator: Dmitry Richard, mr.nobody@citadel-nexus.com
 - authorization_source: explicit Bits AI operator directive, 2026-10-20
 - brief: .bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md
-- base: a080580836081136b3512e7ff627b5cd92c8dd78 (merged governance PR #21)
-- branch: bits/SRS-CN-INTELLIGENCE-BUILD-001-tooling
+- base: f3232d64a48d037ab24a60961319f7a0faf1ce1c (merged build PR #22)
+- branch: dd/bits/SRS-CN-INTELLIGENCE-GOVERNANCE-001-provenance (session publication binding)
 
 ## Authorization and task table
 
@@ -65,3 +65,17 @@ access or a complete dependency cache. No replacement SDK is authorized.
 Governance PR #21 added a fail-closed provenance workflow and documented the
 missing npm scaffold. Its 12 policy/packaging tests must continue to pass.
 No additional USO_MCP Memory Brief was supplied.
+
+## Authorized continuation
+
+The operator authorized this same session/dispatch to add a manual-only hosted
+lockfile refresh that opens bits/lockfile-refresh after every npm gate passes,
+positive/tampered/wrong-signer attestation checks, and BUILD.md prerequisites.
+No hosted workflow is dispatched here. Package/PR/settings permissions remain
+admin prerequisites, not settings changes performed by this seat.
+
+The bound branch was an ancestor of current main. Build commit a20b142 was
+already merged in PR #22, so fast-forwarding to origin/main preserved all
+published history and avoided replaying it. The new PR diff contains only
+this BUILD continuation. The UI still performs PR creation; no refs are pushed
+from the sandbox.

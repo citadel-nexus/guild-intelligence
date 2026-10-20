@@ -131,7 +131,7 @@
       "enum_type": "ConfigDoc",
       "functions": [],
       "dependencies": [],
-      "lines": 72,
+      "lines": 73,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Register the authorized governance scope while preserving the living-world SRS.",
@@ -429,7 +429,7 @@
       "dependencies": [
         ".bits/tests/test_governance.py"
       ],
-      "lines": 107,
+      "lines": 158,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bind compiled artifacts to trusted default-branch builds with keyless signed SLSA provenance.",
@@ -471,7 +471,7 @@
         ".github/workflows/build-provenance.yml",
         "GOVERNANCE.md"
       ],
-      "lines": 134,
+      "lines": 152,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Enable consumers to verify signed artifact identity and digest without confusing configuration with evidence.",
