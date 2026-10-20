@@ -1,3 +1,20 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .github/workflows/security-scan.yml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .nvmrc
+# EnumType: Workflow
+# EnumEdges: DEPENDS_ON .nvmrc
+# DAG Node: none
+# Intent: Keep CodeQL and secret scanning while aligning the analysis Node runtime.
+# ───────────────────────────────────────────────────────────────
+
 name: Security Scan - guild-intelligence
 on:
   schedule:
@@ -13,6 +30,9 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: .nvmrc
       - uses: github/codeql-action/init@v3
         with:
           languages: javascript

@@ -1,0 +1,1621 @@
+{
+  "vectors": [
+    {
+      "type": "A",
+      "file_path": ".bits/context.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "AGENTS.md"
+      ],
+      "lines": 46,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bound bootstrap paths and validation to the authorized governance SRS.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/context.md",
+      "target": "AGENTS.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/context.md depends on AGENTS.md for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-BUILD-intelligence/memory.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/out/DISP-BUILD-intelligence/memory.json"
+      ],
+      "lines": 38,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Describe governance metadata for .bits/out/DISP-BUILD-intelligence/memory.json.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-intelligence/memory.cgrf.yaml",
+      "target": ".bits/out/DISP-BUILD-intelligence/memory.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-intelligence/memory.cgrf.yaml depends on .bits/out/DISP-BUILD-intelligence/memory.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-BUILD-intelligence/memory.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/queue/DISP-BUILD-intelligence.md"
+      ],
+      "lines": 1621,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve the authorized build-repair file graph and measured validation blockers.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-intelligence/memory.json",
+      "target": ".bits/queue/DISP-BUILD-intelligence.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-intelligence/memory.json depends on .bits/queue/DISP-BUILD-intelligence.md for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-BUILD-intelligence/report.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/queue/DISP-BUILD-intelligence.md",
+        "package.json",
+        ".github/workflows/build-provenance.yml"
+      ],
+      "lines": 78,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Record measured build-repair results without conflating offline diagnostics with a clean install.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-intelligence/report.md",
+      "target": ".bits/queue/DISP-BUILD-intelligence.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-intelligence/report.md depends on .bits/queue/DISP-BUILD-intelligence.md for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-intelligence/report.md",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-intelligence/report.md depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-intelligence/report.md",
+      "target": ".github/workflows/build-provenance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-intelligence/report.md depends on .github/workflows/build-provenance.yml for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-intelligence/memory.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Schema",
+      "functions": [],
+      "dependencies": [
+        ".bits/queue/DISP-GOVERNANCE-intelligence.md"
+      ],
+      "lines": 702,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve auditable file relationships and honest validation outcomes for this staging dispatch.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-intelligence/memory.json",
+      "target": ".bits/queue/DISP-GOVERNANCE-intelligence.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-intelligence/memory.json depends on .bits/queue/DISP-GOVERNANCE-intelligence.md for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/queue/DISP-BUILD-intelligence.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md"
+      ],
+      "lines": 67,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Record build-repair authorization, gates and unresolved dependency access.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-BUILD-intelligence.md",
+      "target": ".bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-BUILD-intelligence.md depends on .bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md",
+      "cket_stage": "04_HYPOTHESIZE",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs_registry.yml"
+      ],
+      "lines": 52,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bound the operator-authorized build repair and its acceptance criteria.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md",
+      "target": ".bits/srs_registry.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-INTELLIGENCE-BUILD-001.md depends on .bits/srs_registry.yml for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs_registry.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 72,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Register the authorized governance scope while preserving the living-world SRS.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs_registry.yml",
+      "target": "SRS-CN-INTELLIGENCE-GOVERNANCE-001",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/srs_registry.yml depends on SRS-CN-INTELLIGENCE-GOVERNANCE-001 for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/tests/test_build_tooling.py",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "package.json",
+        ".github/workflows/build-provenance.yml",
+        ".github/workflows/ci.yml",
+        ".github/workflows/security-scan.yml"
+      ],
+      "lines": 81,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Guard runtime pins, quality-gated provenance, GitHub expressions and preserved security scans.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_build_tooling.py",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_build_tooling.py depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_build_tooling.py",
+      "target": ".github/workflows/build-provenance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_build_tooling.py depends on .github/workflows/build-provenance.yml for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_build_tooling.py",
+      "target": ".github/workflows/ci.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_build_tooling.py depends on .github/workflows/ci.yml for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/tests/test_build_tooling.py",
+      "target": ".github/workflows/security-scan.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/tests/test_build_tooling.py depends on .github/workflows/security-scan.yml for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".dockerignore",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "docker/Dockerfile"
+      ],
+      "lines": 26,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Keep local dependency links, stale output and environment files out of Docker builds.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".dockerignore",
+      "target": "docker/Dockerfile",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".dockerignore depends on docker/Dockerfile for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/build-provenance.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        ".bits/tests/test_governance.py"
+      ],
+      "lines": 107,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bind compiled artifacts to trusted default-branch builds with keyless signed SLSA provenance.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/build-provenance.yml",
+      "target": ".bits/tests/test_governance.py",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/build-provenance.yml depends on .bits/tests/test_governance.py for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/ci.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        ".nvmrc",
+        "package.json"
+      ],
+      "lines": 56,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Run quality gates with the pinned Node version and valid GHCR credential expressions.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/ci.yml",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/ci.yml depends on .nvmrc for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/ci.yml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/ci.yml depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/release.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        ".nvmrc",
+        "package.json"
+      ],
+      "lines": 47,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Use the shared Node pin and quality gates before the existing release publication.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/release.yml",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/release.yml depends on .nvmrc for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/release.yml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/release.yml depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/security-scan.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        ".nvmrc"
+      ],
+      "lines": 60,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Keep CodeQL and secret scanning while aligning the analysis Node runtime.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/security-scan.yml",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/security-scan.yml depends on .nvmrc for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".gitignore",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 25,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Exclude generated build output, local dependencies and environment secrets.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".gitignore",
+      "target": "SRS-CN-INTELLIGENCE-BUILD-001",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".gitignore depends on SRS-CN-INTELLIGENCE-BUILD-001 for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".npmrc",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 18,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Reject installation with a Node runtime that differs from the declared pin.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".npmrc",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".npmrc depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".nvmrc",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 1,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Pin the Node runtime used by developers and CI.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".nvmrc",
+      "target": "SRS-CN-INTELLIGENCE-BUILD-001",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".nvmrc depends on SRS-CN-INTELLIGENCE-BUILD-001 for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": ".nvmrc.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".nvmrc"
+      ],
+      "lines": 38,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Describe governance metadata for .nvmrc.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".nvmrc.cgrf.yaml",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".nvmrc.cgrf.yaml depends on .nvmrc for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "GOVERNANCE.md",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".github/rulesets/default-branch.json",
+        "PROVENANCE.md"
+      ],
+      "lines": 120,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Assign guild accountability and explicit admin activation requirements.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": ".github/rulesets/default-branch.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends on .github/rulesets/default-branch.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": "PROVENANCE.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends on PROVENANCE.md for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "PROVENANCE.md",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "SRS-CN-INTELLIGENCE-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".github/workflows/build-provenance.yml",
+        "GOVERNANCE.md"
+      ],
+      "lines": 134,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Enable consumers to verify signed artifact identity and digest without confusing configuration with evidence.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "PROVENANCE.md",
+      "target": ".github/workflows/build-provenance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "PROVENANCE.md depends on .github/workflows/build-provenance.yml for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "PROVENANCE.md",
+      "target": "GOVERNANCE.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "PROVENANCE.md depends on GOVERNANCE.md for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "docker/Dockerfile",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".nvmrc",
+        "package.json"
+      ],
+      "lines": 31,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Build and run the distribution with the same pinned Node runtime as CI.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "docker/Dockerfile",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "docker/Dockerfile depends on .nvmrc for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "docker/Dockerfile",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "docker/Dockerfile depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "eslint.config.mjs",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 37,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Apply ESLint flat configuration and TypeScript recommended rules to source and tests.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "eslint.config.mjs",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "eslint.config.mjs depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "package.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 42,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Describe governance metadata for package.json.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "package.cgrf.yaml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "package.cgrf.yaml depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "package.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".nvmrc",
+        "tsconfig.json",
+        "tsconfig.build.json",
+        "eslint.config.mjs",
+        "vitest.config.ts"
+      ],
+      "lines": 33,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Declare the actual compiler, lint and test dependencies required by the npm scripts.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "package.json",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "package.json depends on .nvmrc for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package.json",
+      "target": "tsconfig.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "package.json depends on tsconfig.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package.json",
+      "target": "tsconfig.build.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "package.json depends on tsconfig.build.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package.json",
+      "target": "eslint.config.mjs",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "package.json depends on eslint.config.mjs for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package.json",
+      "target": "vitest.config.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "package.json depends on vitest.config.ts for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "src/automation/cml-bridge.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "startCmlBridge"
+      ],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 42,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Remove malformed patch markers and restore the existing CML message bridge compilation.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "src/automation/cml-bridge.ts",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "src/automation/cml-bridge.ts depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "src/automation/nats-listener.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "startListener"
+      ],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 31,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Restore valid TypeScript NATS listener syntax and retain the subscribed message data.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "src/automation/nats-listener.ts",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "src/automation/nats-listener.ts depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "tests/automation.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [
+        "connection"
+      ],
+      "dependencies": [
+        "src/automation/nats-listener.ts",
+        "src/automation/cml-bridge.ts"
+      ],
+      "lines": 100,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Exercise listener decoding and CML success/failure behavior with isolated network mocks.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "tests/automation.test.ts",
+      "target": "src/automation/nats-listener.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tests/automation.test.ts depends on src/automation/nats-listener.ts for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "tests/automation.test.ts",
+      "target": "src/automation/cml-bridge.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tests/automation.test.ts depends on src/automation/cml-bridge.ts for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "tests/health.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/routes/health.ts"
+      ],
+      "lines": 34,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify the public health payload and timestamp behavior without starting a service.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "tests/health.test.ts",
+      "target": "src/routes/health.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tests/health.test.ts depends on src/routes/health.ts for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "tests/index.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/index.ts"
+      ],
+      "lines": 33,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify SDK initialization without opening a real service or event-bus connection.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "tests/index.test.ts",
+      "target": "src/index.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tests/index.test.ts depends on src/index.ts for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.build.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "tsconfig.build.json"
+      ],
+      "lines": 38,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Describe governance metadata for tsconfig.build.json.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "tsconfig.build.cgrf.yaml",
+      "target": "tsconfig.build.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tsconfig.build.cgrf.yaml depends on tsconfig.build.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.build.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "tsconfig.json"
+      ],
+      "lines": 20,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Emit distribution files only after the complete source passes compilation.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "tsconfig.build.json",
+      "target": "tsconfig.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tsconfig.build.json depends on tsconfig.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "tsconfig.json"
+      ],
+      "lines": 38,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Describe governance metadata for tsconfig.json.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "tsconfig.cgrf.yaml",
+      "target": "tsconfig.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tsconfig.cgrf.yaml depends on tsconfig.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 25,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Typecheck every source and test file with strict Node ESM resolution.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "tsconfig.json",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tsconfig.json depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "A",
+      "file_path": "vitest.config.ts",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-INTELLIGENCE-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 32,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Run Node regression tests with explicit scope and optional coverage gates.",
+      "objective_id": "DISP-BUILD-intelligence",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-intelligence",
+        "BITS-CODEGEN",
+        "SRS-CN-INTELLIGENCE-BUILD-001",
+        "build-tooling"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": "vitest.config.ts",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "vitest.config.ts depends on package.json for its build or governance contract.",
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "C",
+      "event_type": "failure",
+      "file_path": null,
+      "description": "Offline npm lockfile resolution fails with ENOTCACHED for the SDK. npm ci lacks a lockfile; typecheck/build require SDK/NATS, and Vitest is unavailable. SDK attachment was rejected by public/private repository isolation. No runtime stub or placeholder lockfile was created.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "timestamp": "2026-10-20T18:01:19.414539+00:00",
+      "commit_sha": null,
+      "smoke_result": null
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": null,
+      "description": "All 12 unchanged governance tests and 4 additional build-policy tests passed. Lint passed with exact preinstalled tools, not a clean npm installation.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "timestamp": "2026-10-20T18:01:19.414539+00:00",
+      "commit_sha": null,
+      "smoke_result": "16/16"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": null,
+      "description": "The actual health module compiled in isolation and its public payload and timestamp were checked under Node 22.17.0; this does not establish a full application build.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-intelligence",
+      "timestamp": "2026-10-20T18:01:19.414539+00:00",
+      "commit_sha": null,
+      "smoke_result": "1/1"
+    }
+  ],
+  "summary": {
+    "type_a_count": 34,
+    "type_b_count": 49,
+    "type_c_count": 3,
+    "ioo_compliance": true,
+    "dkg_orphans": 0,
+    "dispatch_id": "DISP-BUILD-intelligence",
+    "srs_codes": [
+      "SRS-CN-INTELLIGENCE-BUILD-001"
+    ],
+    "seat": "BITS-CODEGEN"
+  }
+}

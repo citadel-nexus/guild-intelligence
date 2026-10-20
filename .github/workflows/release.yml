@@ -1,3 +1,20 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .github/workflows/release.yml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .nvmrc, package.json
+# EnumType: Workflow
+# EnumEdges: DEPENDS_ON .nvmrc; DEPENDS_ON package.json
+# DAG Node: none
+# Intent: Use the shared Node pin and quality gates before the existing release publication.
+# ───────────────────────────────────────────────────────────────
+
 name: Release - guild-intelligence
 on:
   push:
@@ -10,13 +27,15 @@ jobs:
       contents: write
       packages: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: 20
+          node-version-file: .nvmrc
           registry-url: 'https://npm.pkg.github.com'
           scope: '@citadel-guilds'
       - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
       - run: npm test
       - run: npm run build
       - run: npm publish

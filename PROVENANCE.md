@@ -20,7 +20,7 @@
 # Signed build provenance
 
 `.github/workflows/build-provenance.yml` runs governance policy checks and
-builds the existing Node 20 npm project on PRs and pushes to `main`.
+builds the Node 22.17.0 npm project on PRs and pushes to `main`.
 `npm ci` and `npm run build` must succeed before packaging. The tarball
 contains only `dist/`, `package.json`, `LICENSE` and `README.md`, not the
 checkout, environment files, node_modules, or governance output. This is a
@@ -46,11 +46,20 @@ New workflow files do not retrofit signatures onto older artifacts.
 
 ## Current readiness and administrator work
 
-The checkout lacks a lockfile, declared TypeScript/Vitest toolchain and
-TypeScript/ESLint configuration. The existing npm install/test/lint/build
-checks fail. The workflow intentionally fails closed until a separate
-build-toolchain dispatch repairs that scaffold; it cannot issue a real
-attestation yet. No GitHub-hosted signing run was performed in this session.
+The staging build repair declares the compiler, lint and test tools, pins
+Node 22.17.0, adds strict TypeScript/ESLint configuration, and repairs the
+malformed NATS source. The workflow now requires lint, typecheck and tests
+before compilation and packaging. It still cannot issue an attestation until
+all gates pass with resolved runtime dependencies.
+
+Dependency resolution is currently blocked: this sandbox has no SDK/NATS/
+Vitest cache and outbound package downloads are restricted. No generated
+lockfile is available yet, so clean npm ci, full typechecking, application
+tests and a real distribution build remain blocked. Local lint uses the exact
+declared preinstalled compiler/linter packages for diagnostics, not a claimed
+clean install. No hosted signing run has been performed. See
+`.bits/queue/DISP-BUILD-intelligence.md` for the authorized follow-up.
+
 The operator-confirmed guildmaster owner is `@citadel-nexus/guild-intelligence`;
 Oracle's automation identity and expected governance actor is the GitHub App
 `oracle-intelligence-guildmaster`. The ruleset records this actor descriptively;

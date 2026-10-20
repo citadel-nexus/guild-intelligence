@@ -1,0 +1,25 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .gitignore
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: none
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON SRS-CN-INTELLIGENCE-BUILD-001
+# DAG Node: none
+# Intent: Exclude generated build output, local dependencies and environment secrets.
+# ───────────────────────────────────────────────────────────────
+
+node_modules/
+dist/
+coverage/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example

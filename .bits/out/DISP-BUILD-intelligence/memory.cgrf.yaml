@@ -1,0 +1,38 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .bits/out/DISP-BUILD-intelligence/memory.cgrf.yaml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .bits/out/DISP-BUILD-intelligence/memory.json
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON .bits/out/DISP-BUILD-intelligence/memory.json
+# DAG Node: none
+# Intent: Describe governance metadata for .bits/out/DISP-BUILD-intelligence/memory.json.
+# ───────────────────────────────────────────────────────────────
+
+artifact: .bits/out/DISP-BUILD-intelligence/memory.json
+artifact_enum_edges:
+  - DEPENDS_ON .bits/queue/DISP-BUILD-intelligence.md
+
+# CGRF for the adjacent machine-readable artifact:
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .bits/out/DISP-BUILD-intelligence/memory.json
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-BUILD-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-BUILD-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .bits/queue/DISP-BUILD-intelligence.md
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON .bits/queue/DISP-BUILD-intelligence.md
+# DAG Node: none
+# Intent: Preserve the authorized build-repair file graph and measured validation blockers.
+# ───────────────────────────────────────────────────────────────
