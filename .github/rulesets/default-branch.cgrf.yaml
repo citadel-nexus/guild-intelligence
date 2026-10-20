@@ -1,0 +1,45 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .github/rulesets/default-branch.cgrf.yaml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-GOVERNANCE-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-GOVERNANCE-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .github/rulesets/default-branch.json
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON .github/rulesets/default-branch.json
+# DAG Node: none
+# Intent: Describe provenance for the staged branch-ruleset JSON.
+# ───────────────────────────────────────────────────────────────
+
+# Metadata for the adjacent JSON document; JSON cannot contain comments.
+artifact: .github/rulesets/default-branch.json
+artifact_enum_edges:
+  - DEPENDS_ON GOVERNANCE.md
+expected_actor:
+  type: GitHubApp
+  slug: oracle-intelligence-guildmaster
+  url: https://github.com/apps/oracle-intelligence-guildmaster
+code_owner_team: '@citadel-nexus/guild-intelligence'
+identity_source: Operator confirmation through Datadog team guild-intelligence links.
+
+# CGRF for the adjacent JSON artifact:
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .github/rulesets/default-branch.json
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-GOVERNANCE-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-GOVERNANCE-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: GOVERNANCE.md
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON GOVERNANCE.md
+# DAG Node: none
+# Intent: Provide a staged importable default-branch protection policy.
+# ───────────────────────────────────────────────────────────────

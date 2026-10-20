@@ -1,0 +1,38 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .bits/out/DISP-GOVERNANCE-intelligence/memory.cgrf.yaml
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-GOVERNANCE-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-GOVERNANCE-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .bits/out/DISP-GOVERNANCE-intelligence/memory.json
+# EnumType: ConfigDoc
+# EnumEdges: DEPENDS_ON .bits/out/DISP-GOVERNANCE-intelligence/memory.json
+# DAG Node: none
+# Intent: Attach CGRF provenance and declared edges to the JSON memory payload.
+# ───────────────────────────────────────────────────────────────
+
+artifact: .bits/out/DISP-GOVERNANCE-intelligence/memory.json
+artifact_enum_edges:
+  - DEPENDS_ON .bits/queue/DISP-GOVERNANCE-intelligence.md
+
+# CGRF for the adjacent JSON artifact:
+# ─── CGRF Header ───────────────────────────────────────────────
+# File: .bits/out/DISP-GOVERNANCE-intelligence/memory.json
+# Stage: 11_COMMIT
+# SRS: SRS-CN-INTELLIGENCE-GOVERNANCE-001
+# CAPS: pending
+# CK: pending
+# Dispatch: DISP-GOVERNANCE-intelligence
+# Seat: BITS-CODEGEN
+# Owner: Citadel Nexus Inc.
+# Created: 2026-10-20
+# Depends: .bits/queue/DISP-GOVERNANCE-intelligence.md
+# EnumType: Schema
+# EnumEdges: DEPENDS_ON .bits/queue/DISP-GOVERNANCE-intelligence.md
+# DAG Node: none
+# Intent: Preserve auditable file relationships and honest validation outcomes for this staging dispatch.
+# ───────────────────────────────────────────────────────────────
